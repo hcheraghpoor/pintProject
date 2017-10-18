@@ -1,3 +1,6 @@
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,6 +11,7 @@
  *
  * @author mohammadHossein
  */
+
 public class Main {
 
     public static void main(String[] args) {
@@ -15,8 +19,8 @@ public class Main {
         System.out.println("testing constructors");
         Point obj1 = new Point();
         Point obj2 = new Point(89, -100);
-        System.out.println(obj1.getXY());
-        System.out.println(obj2.getXY());
+        System.out.println(obj1.toString());
+        System.out.println(obj2.toString());
         ////////////////////////////////////////////////
         //testing setters
         System.out.println("testing setters");
@@ -25,16 +29,16 @@ public class Main {
         obj2.setY(-90);
         Point obj3 = new Point();
         obj3.setPoint(obj1);
-        System.out.println(obj1.getXY());
-        System.out.println(obj2.getXY());
-        System.out.println(obj3.getXY());
+        System.out.println(obj1.toString());
+        System.out.println(obj2.toString());
+        System.out.println(obj3.toString());
         ////////////////////////////////////////////////
         //testing getters
         System.out.println("testing getters");
         Point obj4 = new Point(80, 34);
         System.out.println("x: " + obj4.getX());
         System.out.println("y: " + obj4.getY());
-        System.out.println("(x,y): " + obj4.getXY());
+        System.out.println("(x,y): " + obj4.toString());
         ////////////////////////////////////////////////
         //other Methdos
         System.out.println("testing other Methods");
@@ -42,12 +46,13 @@ public class Main {
         Point obj6 = new Point(2, 7);
         Point obj7 = new Point();
         obj7.sum(obj5, obj6);
-        System.out.println("sum of obj5 , obj6 is: " + obj7.getXY());
+        System.out.println("sum of obj5 , obj6 is: " + obj7.toString());
         obj7.minus(obj5, obj6);
-        System.out.println("minus of obj5 , obj6 is: " + obj7.getXY());
+        System.out.println("minus of obj5 , obj6 is: " + obj7.toString());
         double distance;
         distance = obj5.getDistance(obj6);
         System.out.println("the distance between obj5 , obj6 is: " + distance);
+        
 
     }
 

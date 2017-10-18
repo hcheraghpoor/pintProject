@@ -22,28 +22,30 @@ public class Point {
     }
 
     public Point(int xx, int yy) {
-        this.setPoint(xx, yy);
+        setPoint(xx, yy);
     }
-    
+
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Setters
-    public void setPoint(int xx, int yy) {
-        //-1000 و1000 فرض بر این است که طول و عرض هر نقطه بین 
-        if ((xx >= -1000 && xx <= 1000) && (yy >= -1000 && yy <= 1000)) {
-            this.x = xx;
-            this.y = yy;
-        } else {
-            this.x = 0;
-            this.y = 0;
-            System.err.println("your x and y value`s must be in range of [-1000,1000]...");
-        }
-    }
-    
     public void setX(int xx) {
-        this.setPoint(xx, this.y);
+        if (xx >= -1000 && xx <= 1000) {
+            x = xx;
+        } else {
+            System.err.println("XX Out of range of x!!!");
+        }
     }
 
     public void setY(int yy) {
-        this.setPoint(this.x, yy);
+         if (yy >= -1000 && yy <= 1000) {
+            x = yy;
+        } else {
+            System.err.println("YY Out of range of y!!!");
+        }
+    }
+
+    public void setPoint(int xx, int yy) {
+        //-1000 و1000 فرض بر این است که طول و عرض هر نقطه بین 
+        setX(xx);
+        setY(yy);
     }
 
     //the clone constructor
@@ -53,7 +55,7 @@ public class Point {
     }
 
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Getters
-    public String getXY() {
+    public String toString() {
         return "(" + this.x + "," + this.y + ")";
     }
 
@@ -64,20 +66,23 @@ public class Point {
     public int getY() {
         return this.y;
     }
+
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Other methods
-    public void sum(Point p1, Point p2){
-        int xx , yy;
+    public void sum(Point p1, Point p2) {
+        int xx, yy;
         xx = p1.x + p2.x;
-        yy = p1.y +p2.y;
+        yy = p1.y + p2.y;
         this.setPoint(xx, yy);
     }
-    public void minus(Point p1, Point p2){
-        int xx , yy;
+
+    public void minus(Point p1, Point p2) {
+        int xx, yy;
         xx = p1.x - p2.x;
         yy = p1.y - p2.y;
         this.setPoint(xx, yy);
     }
-    public double getDistance(Point p){
+
+    public double getDistance(Point p) {
         double result = Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2);
         result = Math.sqrt(result);
         return result;
